@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm dev:*)",
+      "Bash(npm --version)",
+      "Bash(npx pnpm:*)",
+      "Bash(npm install:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(pnpm install:*)",
+      "Bash(export PATH=$HOME/.local/share/pnpm:$HOME/.npm-global/bin:/usr/local/bin:$PATH)",
+      "Bash(pkill -f \"vite --host\")",
+      "Bash(xargs kill:*)",
+      "Bash(git init:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

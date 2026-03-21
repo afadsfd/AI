@@ -1,0 +1,209 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom brand colors */
+  --color-coral: oklch(0.637 0.237 25.331);
+  --color-coral-light: oklch(0.75 0.18 25);
+  --color-charcoal: oklch(0.216 0.006 56.043);
+  --color-warm-gray: oklch(0.554 0.013 58.071);
+  --color-light-gray: oklch(0.878 0.005 56.366);
+  --color-off-white: oklch(0.98 0.003 56);
+
+  /* Custom font families */
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', monospace;
+}
+
+:root {
+  --primary: oklch(0.637 0.237 25.331);
+  --primary-foreground: oklch(0.98 0.003 56);
+  --sidebar-primary: oklch(0.637 0.237 25.331);
+  --sidebar-primary-foreground: oklch(0.98 0.003 56);
+  --chart-1: oklch(0.637 0.237 25.331);
+  --chart-2: oklch(0.554 0.013 58.071);
+  --chart-3: oklch(0.216 0.006 56.043);
+  --chart-4: oklch(0.878 0.005 56.366);
+  --chart-5: oklch(0.75 0.18 25);
+  --radius: 0.25rem;
+  --background: oklch(0.98 0.003 56);
+  --foreground: oklch(0.216 0.006 56.043);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.216 0.006 56.043);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.216 0.006 56.043);
+  --secondary: oklch(0.96 0.003 56);
+  --secondary-foreground: oklch(0.4 0.01 56);
+  --muted: oklch(0.94 0.003 56);
+  --muted-foreground: oklch(0.554 0.013 58.071);
+  --accent: oklch(0.96 0.003 56);
+  --accent-foreground: oklch(0.216 0.006 56.043);
+  --destructive: oklch(0.637 0.237 25.331);
+  --destructive-foreground: oklch(0.98 0.003 56);
+  --border: oklch(0.9 0.005 56);
+  --input: oklch(0.9 0.005 56);
+  --ring: oklch(0.637 0.237 25.331);
+  --sidebar: oklch(0.98 0.003 56);
+  --sidebar-foreground: oklch(0.216 0.006 56.043);
+  --sidebar-accent: oklch(0.96 0.003 56);
+  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
+  --sidebar-border: oklch(0.9 0.005 56);
+  --sidebar-ring: oklch(0.637 0.237 25.331);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background: oklch(0.637 0.237 25.331 / 0.15);
+    color: oklch(0.216 0.006 56.043);
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Diagonal section divider */
+  .diagonal-top {
+    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+    margin-top: -4rem;
+    padding-top: 7rem;
+  }
+
+  .diagonal-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    padding-bottom: 5rem;
+  }
+
+  /* Pulse animation for live indicator */
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+
+  .pulse-dot::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: oklch(0.637 0.237 25.331);
+    animation: pulse-ring 2s ease-out infinite;
+  }
+
+  /* Typewriter cursor */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .cursor-blink::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: oklch(0.637 0.237 25.331);
+    font-weight: 300;
+  }
+
+  /* Subtle grain texture overlay */
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+}
