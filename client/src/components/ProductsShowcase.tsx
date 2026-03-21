@@ -4,14 +4,33 @@
  */
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Languages, Brain, FileSearch, ArrowRight, Globe, Mic, Volume2 } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import { Brain, FileSearch, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ProductsShowcase() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { t } = useLanguage();
+
+  // Typewriter demo animation
+  const fullText = "Hello, I'm excited to discuss our Q3 roadmap with the team.";
+  const translatedText = "你好，我很高兴能与团队讨论我们的第三季度路线图。";
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    if (!isInView) return;
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 30);
+    return () => clearInterval(interval);
+  }, [isInView]);
 
   const comingSoonProducts = [
     {
@@ -63,51 +82,8 @@ export default function ProductsShowcase() {
             className="group block rounded-3xl bg-[#f5f5f7] overflow-hidden transition-shadow duration-500 hover:shadow-lg"
           >
             <div className="grid grid-cols-1 md:grid-cols-2">
-              {/* Product illustration */}
-              <div className="relative overflow-hidden aspect-[4/3] md:aspect-auto flex items-center justify-center p-10 md:p-14 bg-gradient-to-br from-[#e8e8ed] to-[#f5f5f7]">
-                {/* App window mockup */}
-                <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden group-hover:scale-[1.03] transition-transform duration-700">
-                  {/* Window titlebar */}
-                  <div className="flex items-center gap-2 px-4 py-3 bg-[#fafafa] border-b border-[#e5e5e5]">
-                    <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                    <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                    <div className="w-3 h-3 rounded-full bg-[#28c840]" />
-                    <span className="ml-3 text-[11px] text-[#86868b] font-sans">MeetSimul</span>
-                  </div>
-                  {/* App content */}
-                  <div className="p-5 space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <Mic size={14} className="text-coral" />
-                        <span className="text-xs font-medium text-[#1d1d1f] font-sans">English</span>
-                      </div>
-                      <Globe size={14} className="text-[#86868b]" />
-                      <div className="flex items-center gap-2">
-                        <Volume2 size={14} className="text-coral" />
-                        <span className="text-xs font-medium text-[#1d1d1f] font-sans">中文</span>
-                      </div>
-                    </div>
-                    <div className="h-px bg-[#f0f0f0]" />
-                    <div className="space-y-2">
-                      <div className="h-2.5 bg-[#f0f0f0] rounded-full w-full" />
-                      <div className="h-2.5 bg-[#f0f0f0] rounded-full w-4/5" />
-                      <div className="h-2.5 bg-[#f0f0f0] rounded-full w-3/5" />
-                    </div>
-                    <div className="h-px bg-[#f0f0f0]" />
-                    <div className="space-y-2">
-                      <div className="h-2.5 bg-coral/10 rounded-full w-full" />
-                      <div className="h-2.5 bg-coral/10 rounded-full w-4/5" />
-                      <div className="h-2.5 bg-coral/10 rounded-full w-2/5" />
-                    </div>
-                    <div className="flex items-center justify-between pt-2">
-                      <span className="text-[10px] text-[#86868b] font-sans">Latency: 0.3s</span>
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                        <span className="text-[10px] text-green-600 font-sans">Live</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {/* Live demo animation */}
+              <div className="relative overflow-hidden md:aspect-auto flex flex-col justify-center p-8 md:p-10 bg-gradient-to-br from-[#e8e8ed] to-[#f5f5f7]">
                 {/* Live badge */}
                 <div className="absolute top-5 left-5 flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 backdrop-blur-sm">
                   <div className="relative w-2 h-2">
@@ -116,6 +92,55 @@ export default function ProductsShowcase() {
                   <span className="text-xs font-medium text-green-600 font-sans">
                     {t("products.meetsimul.badge")}
                   </span>
+                </div>
+
+                <div className="mt-6">
+                  {/* Source language */}
+                  <div className="mb-5">
+                    <div className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#86868b] mb-2 font-sans">
+                      English (Source)
+                    </div>
+                    <div className="text-sm text-[#1d1d1f] leading-relaxed font-sans min-h-[3em]">
+                      {displayText}
+                      {displayText.length < fullText.length && (
+                        <span className="animate-pulse text-coral">|</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="h-px bg-black/[0.06] my-4" />
+
+                  {/* Translated language */}
+                  <div className="mb-5">
+                    <div className="text-[10px] font-semibold tracking-[0.15em] uppercase text-coral mb-2 font-sans">
+                      Chinese (Translated)
+                    </div>
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={displayText.length === fullText.length ? { opacity: 1 } : {}}
+                      transition={{ duration: 0.5, delay: 0.5 }}
+                      className="text-sm text-[#1d1d1f] leading-relaxed font-sans min-h-[3em]"
+                    >
+                      {displayText.length === fullText.length && translatedText}
+                    </motion.div>
+                  </div>
+
+                  {/* Metrics */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={displayText.length === fullText.length ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 1 }}
+                    className="flex gap-6 pt-4 border-t border-black/[0.06]"
+                  >
+                    <div className="font-sans text-xs">
+                      <span className="text-coral font-semibold">Latency:</span>{" "}
+                      <span className="text-[#86868b]">0.3s</span>
+                    </div>
+                    <div className="font-sans text-xs">
+                      <span className="text-coral font-semibold">Confidence:</span>{" "}
+                      <span className="text-[#86868b]">98.7%</span>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
 
