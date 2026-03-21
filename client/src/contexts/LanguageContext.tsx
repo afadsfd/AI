@@ -123,10 +123,10 @@ export const translations = {
     // Download
     "download.label": "下载",
     "download.title": "立即体验无障碍沟通",
-    "download.description": "macOS 原生应用，17MB 轻量安装，开箱即用。",
+    "download.description": "macOS 原生应用，5.6MB 轻量安装，开箱即用。",
     "download.button": "下载 macOS 版本",
-    "download.version": "版本 1.0.0",
-    "download.size": "17 MB",
+    "download.version": "版本 2.0.6",
+    "download.size": "5.6 MB",
     "download.requires": "需要 macOS 13.0 或更高版本",
     "download.free": "免费试用 14 天，无需信用卡",
 
@@ -262,10 +262,10 @@ export const translations = {
     // Download
     "download.label": "Download",
     "download.title": "Experience Barrier-Free Communication",
-    "download.description": "Native macOS app. 17MB lightweight install. Ready out of the box.",
+    "download.description": "Native macOS app. 5.6MB lightweight install. Ready out of the box.",
     "download.button": "Download for macOS",
-    "download.version": "Version 1.0.0",
-    "download.size": "17 MB",
+    "download.version": "Version 2.0.6",
+    "download.size": "5.6 MB",
     "download.requires": "Requires macOS 13.0 or later",
     "download.free": "14-day free trial, no credit card required",
 
