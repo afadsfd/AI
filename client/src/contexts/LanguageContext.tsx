@@ -144,7 +144,12 @@ export const translations = {
     "footer.products": "产品",
     "footer.company": "公司",
     "footer.resources": "资源",
+    "footer.changelog": "更新记录",
     "footer.copyright": "&copy; 2026 ZeroAI. All rights reserved.",
+
+    // Changelog
+    "changelog.title": "版本记录",
+    "changelog.subtitle": "MeetSimul 更新历史",
   },
   en: {
     // Navbar
@@ -279,7 +284,12 @@ export const translations = {
     "footer.products": "Products",
     "footer.company": "Company",
     "footer.resources": "Resources",
+    "footer.changelog": "Changelog",
     "footer.copyright": "&copy; 2026 ZeroAI. All rights reserved.",
+
+    // Changelog
+    "changelog.title": "Changelog",
+    "changelog.subtitle": "MeetSimul Release History",
   },
 };
 
