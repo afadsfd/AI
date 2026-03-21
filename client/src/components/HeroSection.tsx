@@ -20,12 +20,16 @@ export default function HeroSection() {
             <span className="bg-gradient-to-r from-coral to-coral-light bg-clip-text text-transparent">
               {t("hero.title.highlight1")}
             </span>
-            {" & "}
+            {" "}
             <span className="bg-gradient-to-r from-coral to-coral-light bg-clip-text text-transparent">
               {t("hero.title.highlight2")}
             </span>
-            <br />
-            {t("hero.title.end")}
+            {t("hero.title.end") && (
+              <>
+                <br />
+                {t("hero.title.end")}
+              </>
+            )}
           </motion.h1>
 
           <motion.p

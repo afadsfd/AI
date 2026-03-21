@@ -14,6 +14,7 @@ export default function Navbar() {
     { label: t("nav.features"), href: "#features" },
     { label: t("nav.scenarios"), href: "#scenarios" },
     { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.download"), href: "/MeetSimul.dmg", download: true },
   ];
 
   useEffect(() => {
@@ -55,6 +56,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              {...(link.download ? { download: true } : {})}
               className="font-sans text-xs font-normal text-[#1d1d1f]/80 hover:text-[#1d1d1f] transition-colors duration-200"
             >
               {link.label}
@@ -97,6 +99,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
+                  {...(link.download ? { download: true } : {})}
                   className="font-sans text-sm text-[#1d1d1f] py-2.5 border-b border-black/[0.04]"
                   onClick={() => setMobileOpen(false)}
                 >

@@ -1,25 +1,12 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { toast } from "sonner";
-import { Send } from "lucide-react";
+import { useRef } from "react";
+import { Mail, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success(t("contact.success"));
-    setFormData({ name: "", email: "", company: "", message: "" });
-  };
 
   return (
     <section
@@ -27,7 +14,7 @@ export default function ContactSection() {
       className="bg-[#f5f5f7] py-24 md:py-32 lg:py-40"
       ref={ref}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6">
         {/* Centered header */}
         <div className="text-center mb-16">
           <motion.p
@@ -61,105 +48,46 @@ export default function ContactSection() {
           </motion.p>
         </div>
 
-        {/* Form card */}
+        {/* Contact cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="max-w-2xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto"
         >
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white rounded-3xl shadow-sm p-10 space-y-6"
+          {/* Email card */}
+          <a
+            href="mailto:lz3862680@gmail.com"
+            className="group bg-white rounded-3xl shadow-sm p-8 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-[#1d1d1f] mb-2 font-sans">
-                  {t("contact.form.name")}
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  className="w-full bg-[#f5f5f7] rounded-xl px-4 py-3 border-none outline-none text-[#1d1d1f] text-sm font-sans placeholder:text-[#86868b]/60 focus:ring-2 focus:ring-coral/30 transition-shadow duration-200"
-                  placeholder={t("contact.form.name.placeholder")}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-[#1d1d1f] mb-2 font-sans">
-                  {t("contact.form.email")}
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  className="w-full bg-[#f5f5f7] rounded-xl px-4 py-3 border-none outline-none text-[#1d1d1f] text-sm font-sans placeholder:text-[#86868b]/60 focus:ring-2 focus:ring-coral/30 transition-shadow duration-200"
-                  placeholder={t("contact.form.email.placeholder")}
-                />
-              </div>
+            <div className="w-14 h-14 rounded-2xl bg-coral/10 flex items-center justify-center mb-5 group-hover:bg-coral/15 transition-colors duration-300">
+              <Mail size={24} className="text-coral" />
             </div>
+            <p className="text-xs tracking-[0.15em] uppercase text-[#86868b] mb-2 font-sans">
+              {t("contact.email.label")}
+            </p>
+            <p className="text-base font-medium text-[#1d1d1f] font-sans">
+              lz3862680@gmail.com
+            </p>
+          </a>
 
-            <div>
-              <label className="block text-sm font-medium text-[#1d1d1f] mb-2 font-sans">
-                {t("contact.form.company")}
-              </label>
-              <input
-                type="text"
-                value={formData.company}
-                onChange={(e) =>
-                  setFormData({ ...formData, company: e.target.value })
-                }
-                className="w-full bg-[#f5f5f7] rounded-xl px-4 py-3 border-none outline-none text-[#1d1d1f] text-sm font-sans placeholder:text-[#86868b]/60 focus:ring-2 focus:ring-coral/30 transition-shadow duration-200"
-                placeholder={t("contact.form.company.placeholder")}
-              />
+          {/* Telegram card */}
+          <a
+            href="https://t.me/sky87531"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white rounded-3xl shadow-sm p-8 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-coral/10 flex items-center justify-center mb-5 group-hover:bg-coral/15 transition-colors duration-300">
+              <Send size={24} className="text-coral" />
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-[#1d1d1f] mb-2 font-sans">
-                {t("contact.form.message")}
-              </label>
-              <textarea
-                rows={4}
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-                className="w-full bg-[#f5f5f7] rounded-xl px-4 py-3 border-none outline-none text-[#1d1d1f] text-sm font-sans resize-none placeholder:text-[#86868b]/60 focus:ring-2 focus:ring-coral/30 transition-shadow duration-200"
-                placeholder={t("contact.form.message.placeholder")}
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-coral text-white rounded-full px-8 py-3.5 font-medium text-sm font-sans hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2"
-            >
-              {t("contact.form.submit")}
-              <Send size={15} />
-            </button>
-          </form>
-        </motion.div>
-
-        {/* Contact info below card */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-[#86868b] font-sans"
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-coral" />
-            <span>{t("contact.email")}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-coral" />
-            <span>{t("contact.trial")}</span>
-          </div>
+            <p className="text-xs tracking-[0.15em] uppercase text-[#86868b] mb-2 font-sans">
+              Telegram
+            </p>
+            <p className="text-base font-medium text-[#1d1d1f] font-sans">
+              @sky87531
+            </p>
+          </a>
         </motion.div>
       </div>
     </section>

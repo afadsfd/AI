@@ -23,29 +23,29 @@ export const translations = {
 
     // Hero
     "hero.badge": "AI-Powered Products",
-    "hero.title": "用 AI 重新定义",
-    "hero.title.highlight1": "沟通",
-    "hero.title.highlight2": "协作",
-    "hero.title.end": "的可能性",
+    "hero.title": "你说中文",
+    "hero.title.highlight1": "世界",
+    "hero.title.highlight2": "听懂",
+    "hero.title.end": "",
     "hero.description":
-      "ZeroAI 专注于打造实用的 AI 产品，让前沿技术真正融入工作场景，帮助团队跨越语言、效率与协作的边界。",
+      "ZeroAI 打造无感同传技术，让跨语言会议像母语对话一样自然。",
     "hero.cta.explore": "探索产品",
     "hero.cta.contact": "联系我们",
-    "hero.stat1": "1",
-    "hero.stat1.label": "已发布产品",
+    "hero.stat1": "<0.5s",
+    "hero.stat1.label": "翻译延迟",
     "hero.stat2": "50+",
-    "hero.stat2.label": "覆盖语种",
-    "hero.stat3": "∞",
-    "hero.stat3.label": "可能性",
+    "hero.stat2.label": "支持语种",
+    "hero.stat3": "macOS",
+    "hero.stat3.label": "原生体验",
 
     // Products Showcase
     "products.label": "Our Products",
-    "products.title": "产品矩阵",
+    "products.title": "我们的产品",
     "products.meetsimul.badge": "已发布",
     "products.meetsimul.tag": "旗舰产品",
     "products.meetsimul.name": "MeetSimul",
     "products.meetsimul.desc":
-      "连接一切会议系统的 AI 同声传译引擎。无需更换会议工具，一键接入实时翻译。支持 Zoom、Teams、Google Meet 等主流平台，让跨语言沟通像母语对话一样自然。",
+      "开会说中文，对方听到英文。无需切换工具，无需安装插件，MeetSimul 在后台静默运行，让 Zoom、Teams、Google Meet 等平台一键拥有同传能力。",
     "products.meetsimul.metric1": "<0.5s",
     "products.meetsimul.metric1.label": "延迟",
     "products.meetsimul.metric2": "50+",
@@ -72,19 +72,19 @@ export const translations = {
     "features.title": "为什么选择",
     "features.title.highlight": "MeetSimul",
     "features.description":
-      "MeetSimul 重新定义了会议同传的技术架构。不依赖任何特定平台，不需要复杂的集成流程，只需一个轻量级的桌面应用，就能为任何在线会议添加专业级的同声传译能力。",
+      "不依赖特定平台，不需要复杂集成。一个轻量桌面应用，让任何在线会议拥有专业级同声传译。",
     "features.feature1": "亚秒级延迟",
     "features.feature1.desc":
-      "端到端翻译延迟低于 500 毫秒，接近人类同传的反应速度。基于流式 ASR 与增量翻译技术，让对话节奏不被打断。",
+      "对方话音未落，翻译已到。低于 0.5 秒的延迟，让对话节奏完全不被打断。",
     "features.feature2": "50+ 语种覆盖",
     "features.feature2.desc":
-      "支持中、英、日、韩、法、德、西等 50 余种语言的实时互译。持续扩展语种库，覆盖全球主要商务语言。",
+      "中英日韩法德西，50+ 语种实时互译，覆盖全球主要商务场景。",
     "features.feature3": "零集成接入",
     "features.feature3.desc":
-      "无需安装插件或申请 API 权限。通过系统级音频桥接技术，5 分钟内完成部署，即刻开始使用。",
+      "不改会议工具，不装插件，不申请权限。下载、安装、开用，5 分钟搞定。",
     "features.feature4": "自然语音合成",
     "features.feature4.desc":
-      "采用最新的神经网络语音合成技术，翻译结果以自然流畅的语音输出，告别机械的机器人声音。",
+      "告别机器人腔调。AI 合成的声音自然流畅，让对方感受不到翻译的存在。",
 
     // How It Works
     "howitworks.label": "MeetSimul / 工作流程",
@@ -96,11 +96,11 @@ export const translations = {
     "howitworks.step1.detail": "< 50MB 安装包",
     "howitworks.step2": "语音输入",
     "howitworks.step2.desc":
-      "搭配讯飞输入法等语音输入工具，用中文自然说话即可。MeetSimul 实时捕获语音内容，自动翻译为目标语言输出，无需手动切换。",
+      "用中文自然说话，搭配讯飞输入法等语音工具。MeetSimul 实时翻译，你说中文，输出英文。",
     "howitworks.step2.detail": "说中文，出英文",
     "howitworks.step3": "切换麦克风",
     "howitworks.step3.desc":
-      "在会议软件中将输入麦克风切换为 MeetSimul 虚拟麦克风。你说中文，对方直接听到流畅的英文语音，跨语言沟通无感切换。",
+      "在会议软件里切换到 MeetSimul 虚拟麦克风，对方直接听到流畅的英文。就这么简单。",
     "howitworks.step3.detail": "一键切换，即刻生效",
 
     // Scenarios
@@ -109,21 +109,21 @@ export const translations = {
     "scenarios.title.highlight": "跨语言",
     "scenarios.scenario1": "跨国团队协作",
     "scenarios.scenario1.desc":
-      "分布在不同国家的团队成员使用各自习惯的会议工具，MeetSimul 在后台默默工作，让每个人都能用母语参与讨论，消除语言壁垒带来的效率损耗。",
+      "每个人用母语开会，MeetSimul 在后台默默翻译，语言不再是团队协作的门槛。",
     "scenarios.scenario2": "国际商务谈判",
     "scenarios.scenario2.desc":
-      "在关键的商务谈判中，精准的语言表达至关重要。MeetSimul 提供专业级的实时翻译，确保每一个商业术语、每一个数字都被准确传达。",
+      "每个术语、每个数字都被精准传达。关键谈判，不容有失。",
     "scenarios.scenario3": "学术研讨交流",
     "scenarios.scenario3.desc":
-      "国际学术会议不再受语言限制。研究者可以用自己最擅长的语言发表观点，同时实时获取其他语言的翻译，促进全球学术思想的碰撞与融合。",
+      "用最擅长的语言发表观点，实时获取翻译，让学术交流不受语言限制。",
     "scenarios.scenario4": "全球客户支持",
     "scenarios.scenario4.desc":
-      "客服团队无需精通多国语言，即可为全球客户提供母语级的技术支持。降低人力成本的同时，显著提升客户满意度和问题解决效率。",
+      "客服无需精通多语种，即可提供母语级支持，降本增效一步到位。",
 
     // Download
     "download.label": "下载",
-    "download.title": "下载 MeetSimul",
-    "download.description": "专为 macOS 打造的原生应用。轻量、快速、安全，开箱即用。",
+    "download.title": "立即体验无障碍沟通",
+    "download.description": "macOS 原生应用，17MB 轻量安装，开箱即用。",
     "download.button": "下载 macOS 版本",
     "download.version": "版本 1.0.0",
     "download.size": "17 MB",
@@ -136,22 +136,11 @@ export const translations = {
     "contact.title.highlight": "语言边界",
     "contact.title.end": "了吗？",
     "contact.description":
-      "填写表单申请免费试用，我们的团队会在 24 小时内与您联系，为您量身定制最佳的同传解决方案。",
-    "contact.email": "hello@zeroai.com",
-    "contact.trial": "14 天免费试用，无需信用卡",
-    "contact.form.name": "姓名",
-    "contact.form.name.placeholder": "您的姓名",
-    "contact.form.email": "邮箱",
-    "contact.form.email.placeholder": "your@email.com",
-    "contact.form.company": "公司",
-    "contact.form.company.placeholder": "公司名称（选填）",
-    "contact.form.message": "需求描述",
-    "contact.form.message.placeholder": "请简要描述您的使用场景和需求...",
-    "contact.form.submit": "提交申请",
-    "contact.success": "感谢您的关注！我们会尽快与您联系。",
+      "通过邮件或 Telegram 联系我，获取产品试用或合作咨询。",
+    "contact.email.label": "邮箱",
 
     // Footer
-    "footer.brand.desc": "ZeroAI 是一个 AI 产品平台。MeetSimul 是我们的无侵入式会议同传引擎。",
+    "footer.brand.desc": "ZeroAI — 用 AI 消除沟通边界。",
     "footer.products": "产品",
     "footer.company": "公司",
     "footer.resources": "资源",
@@ -167,29 +156,29 @@ export const translations = {
 
     // Hero
     "hero.badge": "AI-Powered Products",
-    "hero.title": "Redefine Communication",
-    "hero.title.highlight1": "and Collaboration",
-    "hero.title.highlight2": "with AI",
-    "hero.title.end": "Possibilities",
+    "hero.title": "You Speak Your Language.",
+    "hero.title.highlight1": "The World",
+    "hero.title.highlight2": "Understands",
+    "hero.title.end": "",
     "hero.description":
-      "ZeroAI is dedicated to building practical AI products that bring cutting-edge technology into real work scenarios, helping teams transcend language, efficiency, and collaboration barriers.",
+      "ZeroAI builds seamless interpretation technology that makes cross-language meetings feel as natural as speaking your native tongue.",
     "hero.cta.explore": "Explore Products",
     "hero.cta.contact": "Contact Us",
-    "hero.stat1": "1",
-    "hero.stat1.label": "Product Live",
+    "hero.stat1": "<0.5s",
+    "hero.stat1.label": "Latency",
     "hero.stat2": "50+",
     "hero.stat2.label": "Languages",
-    "hero.stat3": "∞",
-    "hero.stat3.label": "Possibilities",
+    "hero.stat3": "macOS",
+    "hero.stat3.label": "Native App",
 
     // Products Showcase
     "products.label": "Our Products",
-    "products.title": "Product Lineup",
+    "products.title": "Our Products",
     "products.meetsimul.badge": "Live",
     "products.meetsimul.tag": "Flagship Product",
     "products.meetsimul.name": "MeetSimul",
     "products.meetsimul.desc":
-      "An AI-powered simultaneous interpretation engine that connects to any meeting system. No need to switch tools—enable real-time translation with one click. Supports Zoom, Teams, Google Meet, and more, making cross-language communication as natural as speaking your native language.",
+      "Speak your language, they hear theirs. No tools to switch, no plugins to install. MeetSimul runs silently in the background, giving Zoom, Teams, Google Meet, and more instant interpretation capabilities.",
     "products.meetsimul.metric1": "<0.5s",
     "products.meetsimul.metric1.label": "Latency",
     "products.meetsimul.metric2": "50+",
@@ -208,7 +197,7 @@ export const translations = {
     "product.title": "One Engine,",
     "product.title.highlight": "Infinite Connections",
     "product.description":
-      "MeetSimul uses proprietary audio bridging technology that requires no API integration or plugin installation from any meeting platform. Through system-level audio capture, it enables non-intrusive simultaneous interpretation for any meeting system. No matter which platform your team uses, you get a consistent translation experience.",
+      "MeetSimul uses proprietary audio bridging technology that requires no API integration or plugin installation from any meeting platform. Through system-level audio capture, it enables non-intrusive simultaneous interpretation for any meeting system.",
     "product.quote":
       "Not replacing your meeting tools, but giving every meeting tool interpretation capabilities.",
 
@@ -217,19 +206,19 @@ export const translations = {
     "features.title": "Why Choose",
     "features.title.highlight": "MeetSimul",
     "features.description":
-      "MeetSimul redefines the technical architecture of meeting interpretation. It doesn't depend on any specific platform or require complex integration processes. Just one lightweight desktop app, and any online meeting gets professional-grade simultaneous interpretation.",
+      "No platform dependency, no complex integration. One lightweight desktop app gives any online meeting professional-grade simultaneous interpretation.",
     "features.feature1": "Sub-second Latency",
     "features.feature1.desc":
-      "End-to-end translation latency under 500ms, approaching human interpreter response time. Stream-based ASR and incremental translation keep conversations flowing naturally.",
-    "features.feature2": "50+ Language Coverage",
+      "The translation arrives before they finish speaking. Under 0.5s latency keeps conversations flowing without interruption.",
+    "features.feature2": "50+ Languages",
     "features.feature2.desc":
-      "Real-time translation between Chinese, English, Japanese, Korean, French, German, Spanish, and 40+ more languages. Continuously expanding language support for global business.",
-    "features.feature3": "Zero Integration Effort",
+      "English, Chinese, Japanese, Korean, French, German, Spanish — 50+ languages with real-time translation for global business.",
+    "features.feature3": "Zero Integration",
     "features.feature3.desc":
-      "No plugins to install or API permissions to request. System-level audio bridging technology gets you running in 5 minutes, ready to use immediately.",
-    "features.feature4": "Natural Voice Synthesis",
+      "No tool changes, no plugins, no permissions. Download, install, go. Five minutes to get started.",
+    "features.feature4": "Natural Voice",
     "features.feature4.desc":
-      "Latest neural network voice synthesis technology delivers natural, fluent speech output. Say goodbye to robotic machine voices.",
+      "No more robotic voices. AI-synthesized speech sounds natural and fluent — the other side won't even notice it's translated.",
 
     // How It Works
     "howitworks.label": "MeetSimul / How It Works",
@@ -241,11 +230,11 @@ export const translations = {
     "howitworks.step1.detail": "< 50MB Package",
     "howitworks.step2": "Voice Input",
     "howitworks.step2.desc":
-      "Use a voice input tool like iFlytek Input to speak naturally in Chinese. MeetSimul captures your speech in real-time and automatically translates it to the target language.",
+      "Speak naturally in your language using a voice input tool like iFlytek Input. MeetSimul translates in real-time — you speak Chinese, it outputs English.",
     "howitworks.step2.detail": "Speak Chinese, Get English",
     "howitworks.step3": "Switch Microphone",
     "howitworks.step3.desc":
-      "Set your meeting app's input microphone to the MeetSimul virtual microphone. You speak Chinese, the other party hears fluent English — seamless cross-language communication.",
+      "Switch to the MeetSimul virtual microphone in your meeting app. They hear fluent English. It's that simple.",
     "howitworks.step3.detail": "One Click, Instant Effect",
 
     // Scenarios
@@ -254,21 +243,21 @@ export const translations = {
     "scenarios.title.highlight": "Cross-Language",
     "scenarios.scenario1": "Global Team Collaboration",
     "scenarios.scenario1.desc":
-      "Team members across countries use their preferred meeting tools. MeetSimul works silently in the background, letting everyone participate in their native language, eliminating efficiency loss from language barriers.",
+      "Everyone speaks their own language. MeetSimul translates silently in the background. Language is no longer a barrier to teamwork.",
     "scenarios.scenario2": "International Business Negotiations",
     "scenarios.scenario2.desc":
-      "In critical business negotiations, precise language is essential. MeetSimul provides professional real-time translation, ensuring every business term and number is conveyed accurately.",
+      "Every term, every number, precisely conveyed. In high-stakes negotiations, accuracy is everything.",
     "scenarios.scenario3": "Academic Conferences",
     "scenarios.scenario3.desc":
-      "International academic conferences are no longer limited by language. Researchers present in their strongest language while receiving real-time translation, fostering global academic exchange.",
+      "Present in your strongest language, receive translations in real-time. Academic exchange without language limits.",
     "scenarios.scenario4": "Global Customer Support",
     "scenarios.scenario4.desc":
-      "Support teams don't need to speak multiple languages to provide native-level technical support to global customers. Reduce costs while significantly improving satisfaction and resolution speed.",
+      "Support teams deliver native-level service in any language. Cut costs and boost satisfaction in one step.",
 
     // Download
     "download.label": "Download",
-    "download.title": "Download MeetSimul",
-    "download.description": "A native app built for macOS. Lightweight, fast, secure, and ready to use out of the box.",
+    "download.title": "Experience Barrier-Free Communication",
+    "download.description": "Native macOS app. 17MB lightweight install. Ready out of the box.",
     "download.button": "Download for macOS",
     "download.version": "Version 1.0.0",
     "download.size": "17 MB",
@@ -281,23 +270,12 @@ export const translations = {
     "contact.title.highlight": "Language Barriers",
     "contact.title.end": "?",
     "contact.description":
-      "Fill out the form to request a free trial. Our team will contact you within 24 hours to customize the best interpretation solution for your needs.",
-    "contact.email": "hello@zeroai.com",
-    "contact.trial": "14-day free trial, no credit card required",
-    "contact.form.name": "Name",
-    "contact.form.name.placeholder": "Your name",
-    "contact.form.email": "Email",
-    "contact.form.email.placeholder": "your@email.com",
-    "contact.form.company": "Company",
-    "contact.form.company.placeholder": "Company name (optional)",
-    "contact.form.message": "Requirements",
-    "contact.form.message.placeholder": "Briefly describe your use case and requirements...",
-    "contact.form.submit": "Submit Request",
-    "contact.success": "Thank you for your interest! We'll be in touch soon.",
+      "Reach out via email or Telegram for product trials or collaboration.",
+    "contact.email.label": "Email",
 
     // Footer
     "footer.brand.desc":
-      "ZeroAI is an AI product platform. MeetSimul is our non-intrusive meeting interpretation engine.",
+      "ZeroAI — Breaking communication barriers with AI.",
     "footer.products": "Products",
     "footer.company": "Company",
     "footer.resources": "Resources",
@@ -314,7 +292,7 @@ export function LanguageProvider({
 
   const t = (key: string): string => {
     return (
-      translations[language][key as keyof (typeof translations)[Language]] ||
+      translations[language][key as keyof (typeof translations)[Language]] ??
       key
     );
   };
