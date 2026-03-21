@@ -1,10 +1,9 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProductsShowcase from "@/components/ProductsShowcase";
-import ProductSection from "@/components/ProductSection";
 import FeaturesSection from "@/components/FeaturesSection";
-import LiveDemoSection from "@/components/LiveDemoSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import LiveDemoSection from "@/components/LiveDemoSection";
 import ScenariosSection from "@/components/ScenariosSection";
 import DownloadSection from "@/components/DownloadSection";
 import ContactSection from "@/components/ContactSection";
@@ -17,10 +16,9 @@ export default function Home() {
       <main>
         <HeroSection />
         <ProductsShowcase />
-        <ProductSection />
         <FeaturesSection />
-        <LiveDemoSection />
         <HowItWorksSection />
+        <LiveDemoSection />
         <ScenariosSection />
         <DownloadSection />
         <ContactSection />

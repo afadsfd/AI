@@ -134,7 +134,7 @@ export default function ProductsShowcase() {
                 </p>
 
                 {/* Key metrics */}
-                <div className="flex gap-8 mb-8">
+                <div className="flex gap-8 mb-6">
                   {[
                     { value: t("products.meetsimul.metric1"), label: t("products.meetsimul.metric1.label") },
                     { value: t("products.meetsimul.metric2"), label: t("products.meetsimul.metric2.label") },
@@ -148,6 +148,15 @@ export default function ProductsShowcase() {
                         {m.label}
                       </div>
                     </div>
+                  ))}
+                </div>
+
+                {/* Platform tags */}
+                <div className="flex flex-wrap gap-1.5 mb-8">
+                  {["Zoom", "Teams", "Google Meet", "Webex", "腾讯会议", "飞书", "钉钉"].map((p) => (
+                    <span key={p} className="px-2.5 py-1 text-[11px] rounded-full bg-[#e8e8ed] text-[#86868b] font-sans">
+                      {p}
+                    </span>
                   ))}
                 </div>
 
