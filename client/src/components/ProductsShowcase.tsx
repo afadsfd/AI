@@ -1,16 +1,12 @@
 /*
- * Design: Constructivism × Connection Graph
- * Products Showcase: Multi-product grid with MeetSimul as flagship
- * 2-3 Coming Soon placeholder cards for future products
- * Asymmetric card sizes, featured product takes more space
+ * Apple-style Products Showcase
+ * Centered section header, featured card, coming soon cards
  */
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Languages, Brain, FileSearch, ArrowRight } from "lucide-react";
+import { Languages, Brain, FileSearch, ArrowRight, Globe, Mic, Volume2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const PRODUCT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663445986574/Jj7onUvNJQ2rzeC6pnzA7s/product-concept-j9q8h6TtB7vUhTSMtkgPY6.webp";
 
 export default function ProductsShowcase() {
   const ref = useRef(null);
@@ -33,169 +29,163 @@ export default function ProductsShowcase() {
   ];
 
   return (
-    <section id="products" className="py-20 md:py-28" ref={ref}>
-      <div className="container">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-6"
-        >
-          <div className="w-8 h-px bg-coral" />
-          <span
-            className="text-xs tracking-[0.25em] uppercase text-warm-gray"
-            style={{ fontFamily: "var(--font-mono)" }}
+    <section id="products" className="py-24 md:py-32 lg:py-40" ref={ref}>
+      <div className="max-w-[1120px] mx-auto px-6">
+        {/* Centered section header */}
+        <div className="text-center mb-16 md:mb-20">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-xs tracking-[0.2em] uppercase text-coral font-semibold mb-4 font-sans"
           >
             {t("products.label")}
-          </span>
-        </motion.div>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-charcoal mb-16"
-          style={{ fontFamily: "var(--font-serif)" }}
-        >
-          {t("products.title")}
-        </motion.h2>
-
-        {/* Products grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Featured product: MeetSimul — spans 8 columns */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-8"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#1d1d1f] font-sans"
           >
-            <a
-              href="#meetsimul"
-              className="group block border border-charcoal/10 hover:border-coral/40 transition-all duration-500 bg-white overflow-hidden"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                {/* Product image */}
-                <div className="relative overflow-hidden aspect-[4/3] md:aspect-auto">
-                  <img
-                    src={PRODUCT_IMG}
-                    alt="MeetSimul - AI simultaneous interpretation"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  {/* Live badge */}
-                  <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-charcoal/80 backdrop-blur-sm">
-                    <div className="relative w-1.5 h-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot" />
-                    </div>
-                    <span
-                      className="text-[10px] tracking-[0.15em] uppercase text-off-white"
-                      style={{ fontFamily: "var(--font-mono)" }}
-                    >
-                      {t("products.meetsimul.badge")}
-                    </span>
+            {t("products.title")}
+          </motion.h2>
+        </div>
+
+        {/* Featured product: MeetSimul */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mb-6"
+        >
+          <a
+            href="#meetsimul"
+            className="group block rounded-3xl bg-[#f5f5f7] overflow-hidden transition-shadow duration-500 hover:shadow-lg"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              {/* Product illustration */}
+              <div className="relative overflow-hidden aspect-[4/3] md:aspect-auto flex items-center justify-center p-10 md:p-14 bg-gradient-to-br from-[#e8e8ed] to-[#f5f5f7]">
+                {/* App window mockup */}
+                <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden group-hover:scale-[1.03] transition-transform duration-700">
+                  {/* Window titlebar */}
+                  <div className="flex items-center gap-2 px-4 py-3 bg-[#fafafa] border-b border-[#e5e5e5]">
+                    <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                    <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                    <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+                    <span className="ml-3 text-[11px] text-[#86868b] font-sans">MeetSimul</span>
                   </div>
-                </div>
-
-                {/* Product info */}
-                <div className="p-8 md:p-10 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <Languages size={20} className="text-coral" />
-                      <span
-                        className="text-xs tracking-[0.15em] uppercase text-warm-gray"
-                        style={{ fontFamily: "var(--font-mono)" }}
-                      >
-                        {t("products.meetsimul.tag")}
-                      </span>
+                  {/* App content */}
+                  <div className="p-5 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Mic size={14} className="text-coral" />
+                        <span className="text-xs font-medium text-[#1d1d1f] font-sans">English</span>
+                      </div>
+                      <Globe size={14} className="text-[#86868b]" />
+                      <div className="flex items-center gap-2">
+                        <Volume2 size={14} className="text-coral" />
+                        <span className="text-xs font-medium text-[#1d1d1f] font-sans">中文</span>
+                      </div>
                     </div>
-
-                    <h3
-                      className="text-2xl md:text-3xl tracking-tight text-charcoal mb-3"
-                      style={{ fontFamily: "var(--font-serif)" }}
-                    >
-                      {t("products.meetsimul.name")}
-                    </h3>
-
-                    <p
-                      className="text-sm text-warm-gray leading-relaxed mb-6"
-                      style={{ fontFamily: "var(--font-sans)" }}
-                    >
-                      {t("products.meetsimul.desc")}
-                    </p>
-
-                    {/* Key metrics */}
-                    <div className="flex gap-6 mb-6">
-                      {[
-                        { value: t("products.meetsimul.metric1"), label: t("products.meetsimul.metric1.label") },
-                        { value: t("products.meetsimul.metric2"), label: t("products.meetsimul.metric2.label") },
-                        { value: t("products.meetsimul.metric3"), label: t("products.meetsimul.metric3.label") },
-                      ].map((m) => (
-                        <div key={m.label}>
-                          <div
-                            className="text-lg text-charcoal"
-                            style={{ fontFamily: "var(--font-serif)" }}
-                          >
-                            {m.value}
-                          </div>
-                          <div
-                            className="text-[10px] text-warm-gray tracking-wide uppercase"
-                            style={{ fontFamily: "var(--font-mono)" }}
-                          >
-                            {m.label}
-                          </div>
-                        </div>
-                      ))}
+                    <div className="h-px bg-[#f0f0f0]" />
+                    <div className="space-y-2">
+                      <div className="h-2.5 bg-[#f0f0f0] rounded-full w-full" />
+                      <div className="h-2.5 bg-[#f0f0f0] rounded-full w-4/5" />
+                      <div className="h-2.5 bg-[#f0f0f0] rounded-full w-3/5" />
+                    </div>
+                    <div className="h-px bg-[#f0f0f0]" />
+                    <div className="space-y-2">
+                      <div className="h-2.5 bg-coral/10 rounded-full w-full" />
+                      <div className="h-2.5 bg-coral/10 rounded-full w-4/5" />
+                      <div className="h-2.5 bg-coral/10 rounded-full w-2/5" />
+                    </div>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="text-[10px] text-[#86868b] font-sans">Latency: 0.3s</span>
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                        <span className="text-[10px] text-green-600 font-sans">Live</span>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="flex items-center gap-2 text-sm text-charcoal group-hover:text-coral transition-colors duration-300">
-                    <span style={{ fontFamily: "var(--font-sans)" }}>{t("products.meetsimul.cta")}</span>
-                    <ArrowRight
-                      size={14}
-                      className="group-hover:translate-x-1 transition-transform duration-300"
-                    />
+                </div>
+                {/* Live badge */}
+                <div className="absolute top-5 left-5 flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 backdrop-blur-sm">
+                  <div className="relative w-2 h-2">
+                    <div className="w-2 h-2 rounded-full bg-green-500 pulse-dot" />
                   </div>
-                </div>
-              </div>
-            </a>
-          </motion.div>
-
-          {/* Coming Soon products — span 4 columns, stacked */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
-            {comingSoonProducts.map((product, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 + index * 0.15 }}
-                className="flex-1 border border-dashed border-charcoal/10 p-8 flex flex-col justify-between bg-off-white/50 hover:border-charcoal/20 transition-colors duration-300"
-              >
-                <div>
-                  <product.icon size={20} className="text-warm-gray/40 mb-4" />
-                  <h3
-                    className="text-lg tracking-tight text-charcoal/40 mb-2"
-                    style={{ fontFamily: "var(--font-serif)" }}
-                  >
-                    {product.name}
-                  </h3>
-                  <p
-                    className="text-xs text-warm-gray/50 leading-relaxed"
-                    style={{ fontFamily: "var(--font-sans)" }}
-                  >
-                    {product.description}
-                  </p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-dashed border-charcoal/5">
-                  <span
-                    className="text-[10px] tracking-[0.2em] uppercase text-warm-gray/30"
-                    style={{ fontFamily: "var(--font-mono)" }}
-                  >
-                    {product.tagline}
+                  <span className="text-xs font-medium text-green-600 font-sans">
+                    {t("products.meetsimul.badge")}
                   </span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+
+              {/* Product info */}
+              <div className="p-10 md:p-12 flex flex-col justify-center">
+                <p className="text-xs tracking-[0.15em] uppercase text-coral font-semibold mb-3 font-sans">
+                  {t("products.meetsimul.tag")}
+                </p>
+
+                <h3 className="text-3xl font-semibold tracking-tight text-[#1d1d1f] mb-4 font-sans">
+                  {t("products.meetsimul.name")}
+                </h3>
+
+                <p className="text-base text-[#86868b] leading-relaxed mb-8 font-sans">
+                  {t("products.meetsimul.desc")}
+                </p>
+
+                {/* Key metrics */}
+                <div className="flex gap-8 mb-8">
+                  {[
+                    { value: t("products.meetsimul.metric1"), label: t("products.meetsimul.metric1.label") },
+                    { value: t("products.meetsimul.metric2"), label: t("products.meetsimul.metric2.label") },
+                    { value: t("products.meetsimul.metric3"), label: t("products.meetsimul.metric3.label") },
+                  ].map((m) => (
+                    <div key={m.label}>
+                      <div className="text-2xl font-semibold text-[#1d1d1f] font-sans">
+                        {m.value}
+                      </div>
+                      <div className="text-xs text-[#86868b] mt-1 font-sans">
+                        {m.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-2 text-coral font-medium font-sans group-hover:gap-3 transition-all duration-300">
+                  <span>{t("products.meetsimul.cta")}</span>
+                  <ArrowRight size={16} />
+                </div>
+              </div>
+            </div>
+          </a>
+        </motion.div>
+
+        {/* Coming Soon cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {comingSoonProducts.map((product, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.4 + index * 0.15 }}
+              className="rounded-2xl bg-[#f5f5f7] border border-dashed border-[#86868b]/20 p-8 md:p-10 flex flex-col justify-between opacity-70"
+            >
+              <div>
+                <product.icon size={24} className="text-[#86868b]/40 mb-5" strokeWidth={1.5} />
+                <h3 className="text-lg font-semibold text-[#1d1d1f]/40 mb-2 font-sans">
+                  {product.name}
+                </h3>
+                <p className="text-sm text-[#86868b]/60 leading-relaxed font-sans">
+                  {product.description}
+                </p>
+              </div>
+              <div className="mt-6 pt-5 border-t border-dashed border-[#86868b]/10">
+                <span className="text-xs tracking-[0.15em] uppercase text-[#86868b]/40 font-sans">
+                  {product.tagline}
+                </span>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

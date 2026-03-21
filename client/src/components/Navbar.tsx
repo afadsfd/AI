@@ -1,10 +1,3 @@
-/*
- * Design: Constructivism × Connection Graph
- * Navbar: Minimal, left-aligned brand with right nav links
- * Uses Instrument Serif for brand, Geist Sans for links
- * Coral red accent on hover, thin bottom border
- */
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -34,53 +27,47 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-off-white/90 backdrop-blur-md border-b border-border"
+          ? "bg-white/80 backdrop-blur-xl backdrop-saturate-[1.8] border-b border-black/[0.08]"
           : "bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between h-16 md:h-20">
-        {/* Brand */}
+      <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-12">
+        {/* Logo */}
         <a
           href="#"
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-2 group"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <div className="relative w-8 h-8 flex items-center justify-center">
-            <div className="w-3 h-3 rounded-full bg-coral" />
-            <div className="absolute w-8 h-8 rounded-full border border-charcoal/20 group-hover:border-coral/50 transition-colors duration-300" />
-          </div>
-          <span
-            className="text-xl tracking-tight text-charcoal"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
+          <div className="w-2.5 h-2.5 rounded-full bg-coral" />
+          <span className="font-sans font-semibold text-base text-[#1d1d1f]">
             ZeroAI
           </span>
         </a>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Center nav links */}
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-warm-gray hover:text-charcoal transition-colors duration-300 relative group"
-              style={{ fontFamily: "var(--font-sans)" }}
+              className="font-sans text-xs font-normal text-[#1d1d1f]/80 hover:text-[#1d1d1f] transition-colors duration-200"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-coral group-hover:w-full transition-all duration-300" />
             </a>
           ))}
-          <div className="w-px h-6 bg-border" />
+        </div>
+
+        {/* Right side */}
+        <div className="hidden md:flex items-center gap-3">
           <LanguageSwitcher />
           <a
             href="#contact"
-            className="text-sm px-5 py-2 bg-charcoal text-off-white hover:bg-coral transition-colors duration-300"
-            style={{ fontFamily: "var(--font-sans)" }}
+            className="font-sans text-xs bg-coral text-white rounded-full px-4 py-1.5 hover:brightness-105 transition-all duration-200"
           >
             {t("hero.cta.explore")}
           </a>
@@ -88,10 +75,10 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-charcoal"
+          className="md:hidden p-1.5 text-[#1d1d1f]"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
         </button>
       </div>
 
@@ -102,26 +89,26 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-off-white/95 backdrop-blur-md border-b border-border overflow-hidden"
+            transition={{ duration: 0.25 }}
+            className="md:hidden bg-white/80 backdrop-blur-xl backdrop-saturate-[1.8] border-b border-black/[0.08] overflow-hidden"
           >
-            <div className="container py-6 flex flex-col gap-4">
+            <div className="max-w-5xl mx-auto px-6 py-5 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-base text-charcoal py-2 border-b border-border/50"
+                  className="font-sans text-sm text-[#1d1d1f] py-2.5 border-b border-black/[0.04]"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="py-4 border-b border-border/50">
+              <div className="py-3">
                 <LanguageSwitcher />
               </div>
               <a
                 href="#contact"
-                className="text-sm px-5 py-3 bg-charcoal text-off-white text-center mt-2"
+                className="font-sans text-sm bg-coral text-white rounded-full text-center py-2.5 mt-1"
                 onClick={() => setMobileOpen(false)}
               >
                 {t("hero.cta.explore")}

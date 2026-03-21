@@ -1,15 +1,12 @@
 /*
- * Design: Constructivism × Connection Graph
- * How It Works: 3-step process with connecting lines
- * Horizontal flow on desktop, vertical on mobile
- * Connection diagram image as visual accent
+ * Apple-style How It Works Section
+ * Clean 3-step horizontal layout with numbered circles
+ * Sans-serif typography, fade-up animations
  */
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const CONNECTION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663445986574/Jj7onUvNJQ2rzeC6pnzA7s/connection-diagram-RcMHX5Fkr3Xcveznw5QyK9.webp";
 
 export default function HowItWorksSection() {
   const ref = useRef(null);
@@ -38,113 +35,62 @@ export default function HowItWorksSection() {
   ];
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden" ref={ref}>
-      <div className="container relative z-10">
-        {/* Section header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 md:mb-20">
-          <div className="lg:col-span-5">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-4 mb-6"
-            >
-              <div className="w-8 h-px bg-coral" />
-              <span
-                className="text-xs tracking-[0.25em] uppercase text-warm-gray"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                {t("howitworks.label")}
-              </span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl md:text-4xl lg:text-5xl text-charcoal leading-tight tracking-tight"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              {t("howitworks.title")}
-              <br />
-              <span className="text-coral italic">{t("howitworks.title.highlight")}</span>
-              {t("nav.contact")}
-            </motion.h2>
-          </div>
-
-          {/* Connection diagram */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-6 lg:col-start-7 hidden lg:block"
+    <section className="bg-white py-24 md:py-32 lg:py-40" ref={ref}>
+      <div className="container">
+        {/* Centered section header */}
+        <div className="text-center mb-16 md:mb-20">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-xs font-semibold tracking-[0.2em] uppercase text-coral mb-4 font-sans"
           >
-            <img
-              src={CONNECTION_IMG}
-              alt="Network connection diagram"
-              className="w-full h-auto max-h-64 object-contain opacity-60"
-            />
-          </motion.div>
+            {t("howitworks.label")}
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1d1d1f] tracking-tight font-sans"
+          >
+            {t("howitworks.title")}
+            <br />
+            <span className="text-coral">{t("howitworks.title.highlight")}</span>
+          </motion.h2>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+        {/* Steps row */}
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          {/* Connecting line on desktop */}
+          <div className="hidden md:block absolute top-7 left-[16.67%] right-[16.67%] h-px bg-black/[0.08]" />
+
           {steps.map((step, index) => (
             <motion.div
               key={step.step}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.4 + index * 0.2 }}
-              className="relative group"
+              transition={{ duration: 0.7, delay: 0.3 + index * 0.15 }}
+              className="relative flex flex-col items-center text-center"
             >
-              {/* Connecting line (desktop) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 right-0 w-full h-px">
-                  <div className="absolute right-0 w-1/2 h-px bg-border" />
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={isInView ? { scaleX: 1 } : {}}
-                    transition={{ duration: 0.8, delay: 0.8 + index * 0.3 }}
-                    className="absolute right-0 w-1/2 h-px bg-coral/30 origin-left"
-                  />
-                </div>
-              )}
-
-              <div className="p-8 md:p-10 border-t border-border group-hover:border-coral/30 transition-colors duration-500">
-                {/* Step number */}
-                <div className="flex items-center gap-4 mb-6">
-                  <span
-                    className="text-3xl md:text-4xl text-charcoal"
-                    style={{ fontFamily: "var(--font-serif)" }}
-                  >
-                    {step.step}
-                  </span>
-                  <div className="flex-1 h-px bg-border" />
-                </div>
-
-                {/* Title */}
-                <h3
-                  className="text-xl text-charcoal mb-3 tracking-tight"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {t(step.titleKey)}
-                </h3>
-
-                {/* Description */}
-                <p
-                  className="text-sm text-warm-gray leading-relaxed mb-4"
-                  style={{ fontFamily: "var(--font-sans)" }}
-                >
-                  {t(step.descKey)}
-                </p>
-
-                {/* Detail tag */}
-                <span
-                  className="text-xs text-coral"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  {t(step.detailKey)}
-                </span>
+              {/* Step number circle */}
+              <div className="w-14 h-14 rounded-full bg-coral text-white flex items-center justify-center text-lg font-semibold font-sans mb-6 relative z-10">
+                {step.step}
               </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-semibold text-[#1d1d1f] mb-3 tracking-tight font-sans">
+                {t(step.titleKey)}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm text-[#86868b] leading-relaxed mb-5 max-w-xs font-sans">
+                {t(step.descKey)}
+              </p>
+
+              {/* Detail tag pill */}
+              <span className="inline-block text-xs font-medium px-4 py-1.5 rounded-full bg-coral/10 text-coral font-sans">
+                {t(step.detailKey)}
+              </span>
             </motion.div>
           ))}
         </div>

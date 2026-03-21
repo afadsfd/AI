@@ -49,9 +49,13 @@
   --color-light-gray: oklch(0.878 0.005 56.366);
   --color-off-white: oklch(0.98 0.003 56);
 
+  /* Apple-inspired colors */
+  --color-apple-gray: #86868b;
+  --color-apple-dark: #1d1d1f;
+  --color-apple-light: #f5f5f7;
+
   /* Custom font families */
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'SF Mono', monospace;
 }
 
@@ -65,8 +69,8 @@
   --chart-3: oklch(0.216 0.006 56.043);
   --chart-4: oklch(0.878 0.005 56.366);
   --chart-5: oklch(0.75 0.18 25);
-  --radius: 0.25rem;
-  --background: oklch(0.98 0.003 56);
+  --radius: 0.75rem;
+  --background: #ffffff;
   --foreground: oklch(0.216 0.006 56.043);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.216 0.006 56.043);
@@ -102,6 +106,7 @@ html {
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -117,7 +122,9 @@ html {
     @apply cursor-pointer;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.015em;
   }
 
   /* Custom selection color */
@@ -152,20 +159,8 @@ html {
     .container {
       padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px;
+      max-width: 1120px;
     }
-  }
-
-  /* Diagonal section divider */
-  .diagonal-top {
-    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
-    margin-top: -4rem;
-    padding-top: 7rem;
-  }
-
-  .diagonal-bottom {
-    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
-    padding-bottom: 5rem;
   }
 
   /* Pulse animation for live indicator */

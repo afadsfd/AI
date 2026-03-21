@@ -1,10 +1,4 @@
-/*
- * Design: Constructivism × Connection Graph
- * Language Switcher: Minimal toggle button in navbar
- */
-
 import { useLanguage, type Language } from "@/contexts/LanguageContext";
-import { motion } from "framer-motion";
 
 export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
@@ -15,22 +9,19 @@ export default function LanguageSwitcher() {
   ];
 
   return (
-    <div className="flex items-center gap-1 border border-charcoal/10 p-1">
+    <div className="flex items-center rounded-full bg-[#f5f5f7] p-0.5">
       {languages.map((lang) => (
-        <motion.button
+        <button
           key={lang.code}
           onClick={() => setLanguage(lang.code)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className={`px-3 py-1.5 text-xs tracking-wide transition-all duration-300 ${
+          className={`font-sans px-3 py-1 text-xs rounded-full transition-all duration-200 ${
             language === lang.code
-              ? "bg-charcoal text-off-white"
-              : "text-charcoal hover:text-coral"
+              ? "bg-white text-[#1d1d1f] shadow-sm"
+              : "text-[#86868b] hover:text-[#1d1d1f]"
           }`}
-          style={{ fontFamily: "var(--font-mono)" }}
         >
           {lang.label}
-        </motion.button>
+        </button>
       ))}
     </div>
   );

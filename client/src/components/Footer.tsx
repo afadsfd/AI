@@ -1,9 +1,3 @@
-/*
- * Design: Constructivism × Connection Graph
- * Footer: Minimal, left-aligned brand with right links
- * Thin top border, monospace details
- */
-
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -16,52 +10,38 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="border-t border-border">
-      <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+    <footer className="bg-[#f5f5f7]">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           {/* Brand */}
           <div className="md:col-span-4">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-6 h-6 flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-coral" />
-                <div className="absolute w-6 h-6 rounded-full border border-charcoal/20" />
-              </div>
-              <span
-                className="text-lg text-charcoal tracking-tight"
-                style={{ fontFamily: "var(--font-serif)" }}
-              >
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-2.5 h-2.5 rounded-full bg-coral" />
+              <span className="text-lg font-semibold text-[#1d1d1f] tracking-tight font-sans">
                 ZeroAI
               </span>
             </div>
-            <p
-              className="text-xs text-warm-gray leading-relaxed max-w-xs"
-              style={{ fontFamily: "var(--font-sans)" }}
-            >
+            <p className="text-sm text-[#86868b] leading-relaxed max-w-xs font-sans">
               {t("footer.brand.desc")}
             </p>
           </div>
 
           {/* Links - Product */}
           <div className="md:col-span-2 md:col-start-7">
-            <h4
-              className="text-xs tracking-[0.15em] uppercase text-warm-gray mb-4"
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
+            <h4 className="text-xs font-semibold text-[#1d1d1f] uppercase tracking-wider mb-4 font-sans">
               {t("footer.products")}
             </h4>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <a
                 href="#products"
-                className="block text-xs text-warm-gray/60 hover:text-charcoal transition-colors duration-300"
-                style={{ fontFamily: "var(--font-sans)" }}
+                className="block text-sm text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 font-sans"
               >
                 MeetSimul
               </a>
               <a
                 href="#"
                 onClick={handlePlaceholder}
-                className="block text-xs text-warm-gray/60 hover:text-charcoal transition-colors duration-300"
-                style={{ fontFamily: "var(--font-sans)" }}
+                className="block text-sm text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 font-sans"
               >
                 Coming Soon
               </a>
@@ -70,26 +50,21 @@ export default function Footer() {
 
           {/* Links - Company */}
           <div className="md:col-span-2">
-            <h4
-              className="text-xs tracking-[0.15em] uppercase text-warm-gray mb-4"
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
+            <h4 className="text-xs font-semibold text-[#1d1d1f] uppercase tracking-wider mb-4 font-sans">
               {t("footer.company")}
             </h4>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <a
                 href="#"
                 onClick={handlePlaceholder}
-                className="block text-xs text-warm-gray/60 hover:text-charcoal transition-colors duration-300"
-                style={{ fontFamily: "var(--font-sans)" }}
+                className="block text-sm text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 font-sans"
               >
                 About
               </a>
               <a
                 href="#"
                 onClick={handlePlaceholder}
-                className="block text-xs text-warm-gray/60 hover:text-charcoal transition-colors duration-300"
-                style={{ fontFamily: "var(--font-sans)" }}
+                className="block text-sm text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 font-sans"
               >
                 Blog
               </a>
@@ -98,25 +73,20 @@ export default function Footer() {
 
           {/* Links - Resources */}
           <div className="md:col-span-2">
-            <h4
-              className="text-xs tracking-[0.15em] uppercase text-warm-gray mb-4"
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
+            <h4 className="text-xs font-semibold text-[#1d1d1f] uppercase tracking-wider mb-4 font-sans">
               {t("footer.resources")}
             </h4>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <a
                 href="#"
                 onClick={handlePlaceholder}
-                className="block text-xs text-warm-gray/60 hover:text-charcoal transition-colors duration-300"
-                style={{ fontFamily: "var(--font-sans)" }}
+                className="block text-sm text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 font-sans"
               >
                 Docs
               </a>
               <a
                 href="#contact"
-                className="block text-xs text-warm-gray/60 hover:text-charcoal transition-colors duration-300"
-                style={{ fontFamily: "var(--font-sans)" }}
+                className="block text-sm text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 font-sans"
               >
                 Support
               </a>
@@ -125,26 +95,23 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-14 pt-8 border-t border-[#d2d2d7]/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <span
-            className="text-xs text-warm-gray/60"
-            style={{ fontFamily: "var(--font-mono)" }}
+            className="text-xs text-[#86868b] font-sans"
             dangerouslySetInnerHTML={{ __html: t("footer.copyright") }}
           />
           <div className="flex gap-6">
             <a
               href="#"
               onClick={handlePlaceholder}
-              className="text-xs text-warm-gray/60 hover:text-charcoal transition-colors duration-300"
-              style={{ fontFamily: "var(--font-mono)" }}
+              className="text-xs text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 font-sans"
             >
               Privacy
             </a>
             <a
               href="#"
               onClick={handlePlaceholder}
-              className="text-xs text-warm-gray/60 hover:text-charcoal transition-colors duration-300"
-              style={{ fontFamily: "var(--font-mono)" }}
+              className="text-xs text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 font-sans"
             >
               Terms
             </a>
