@@ -126,7 +126,7 @@ export const translations = {
     "download.description": "专为 macOS 打造的原生应用。轻量、快速、安全，开箱即用。",
     "download.button": "下载 macOS 版本",
     "download.version": "版本 1.0.0",
-    "download.size": "48 MB",
+    "download.size": "17 MB",
     "download.requires": "需要 macOS 13.0 或更高版本",
     "download.free": "免费试用 14 天，无需信用卡",
 
@@ -271,7 +271,7 @@ export const translations = {
     "download.description": "A native app built for macOS. Lightweight, fast, secure, and ready to use out of the box.",
     "download.button": "Download for macOS",
     "download.version": "Version 1.0.0",
-    "download.size": "48 MB",
+    "download.size": "17 MB",
     "download.requires": "Requires macOS 13.0 or later",
     "download.free": "14-day free trial, no credit card required",
 

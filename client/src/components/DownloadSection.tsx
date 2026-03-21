@@ -63,7 +63,8 @@ export default function DownloadSection() {
           className="mt-10"
         >
           <a
-            href="#"
+            href="/MeetSimul.dmg"
+            download
             className="inline-flex items-center gap-3 bg-coral text-white rounded-full px-10 py-4 text-base font-medium font-sans hover:opacity-90 transition-opacity duration-200"
           >
             <Download size={20} />
