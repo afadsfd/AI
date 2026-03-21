@@ -94,14 +94,14 @@ export const translations = {
     "howitworks.step1.desc":
       "下载轻量级桌面应用，一键安装。无需管理员权限，无需配置任何会议平台的 API。",
     "howitworks.step1.detail": "< 50MB 安装包",
-    "howitworks.step2": "选择语言",
+    "howitworks.step2": "语音输入",
     "howitworks.step2.desc":
-      "设置源语言和目标语言对。支持多语言同时输出，一场会议可覆盖多个语种的参会者。",
-    "howitworks.step2.detail": "50+ 语言对",
-    "howitworks.step3": "开始会议",
+      "搭配讯飞输入法等语音输入工具，用中文自然说话即可。MeetSimul 实时捕获语音内容，自动翻译为目标语言输出，无需手动切换。",
+    "howitworks.step2.detail": "说中文，出英文",
+    "howitworks.step3": "切换麦克风",
     "howitworks.step3.desc":
-      "打开任意会议软件，MeetSimul 自动捕获音频流并实时翻译。翻译结果以字幕或语音形式呈现。",
-    "howitworks.step3.detail": "全自动运行",
+      "在会议软件中将输入麦克风切换为 MeetSimul 虚拟麦克风。你说中文，对方直接听到流畅的英文语音，跨语言沟通无感切换。",
+    "howitworks.step3.detail": "一键切换，即刻生效",
 
     // Scenarios
     "scenarios.label": "MeetSimul / 场景",
@@ -239,14 +239,14 @@ export const translations = {
     "howitworks.step1.desc":
       "Download the lightweight desktop app and install with one click. No admin rights needed, no meeting platform API configuration required.",
     "howitworks.step1.detail": "< 50MB Package",
-    "howitworks.step2": "Choose Languages",
+    "howitworks.step2": "Voice Input",
     "howitworks.step2.desc":
-      "Set your source and target language pair. Support multiple languages simultaneously—one meeting can serve participants in multiple languages.",
-    "howitworks.step2.detail": "50+ Language Pairs",
-    "howitworks.step3": "Start Meeting",
+      "Use a voice input tool like iFlytek Input to speak naturally in Chinese. MeetSimul captures your speech in real-time and automatically translates it to the target language.",
+    "howitworks.step2.detail": "Speak Chinese, Get English",
+    "howitworks.step3": "Switch Microphone",
     "howitworks.step3.desc":
-      "Open any meeting software. MeetSimul automatically captures the audio stream and translates in real-time. Results appear as subtitles or voice output.",
-    "howitworks.step3.detail": "Fully Automated",
+      "Set your meeting app's input microphone to the MeetSimul virtual microphone. You speak Chinese, the other party hears fluent English — seamless cross-language communication.",
+    "howitworks.step3.detail": "One Click, Instant Effect",
 
     // Scenarios
     "scenarios.label": "MeetSimul / Scenarios",
