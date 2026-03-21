@@ -6,6 +6,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Download, Apple } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HowItWorksSection() {
@@ -94,6 +95,44 @@ export default function HowItWorksSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Download CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.8 }}
+          className="mt-20 md:mt-24"
+        >
+          <div className="rounded-3xl bg-[#1d1d1f] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center shrink-0">
+                <Apple size={36} className="text-white" />
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight font-sans mb-1">
+                  {t("download.title")}
+                </h3>
+                <p className="text-sm text-white/50 font-sans">
+                  {t("download.description")}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center md:items-end gap-3 shrink-0">
+              <a
+                href="/MeetSimul.dmg"
+                download
+                className="inline-flex items-center gap-3 bg-coral text-white rounded-full px-8 py-3.5 text-sm font-medium font-sans hover:opacity-90 transition-opacity duration-200"
+              >
+                <Download size={18} />
+                {t("download.button")}
+              </a>
+              <div className="flex items-center gap-4 text-xs text-white/30 font-sans">
+                <span>{t("download.version")}</span>
+                <span>{t("download.size")}</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
