@@ -17,6 +17,24 @@ import {
 
 const changelogData = [
   {
+    version: "v2.0.7",
+    date: "2026.03.22",
+    changes: {
+      zh: [
+        "将「云端/本地模式切换」「词库」提升至顶部控制栏，与「边说边译」同级展示，不再隐藏在设置页",
+        "应用显示名称由 MeetSimul 改为「会议同传」",
+        "设置页新增「联系开发者」区块，展示开发者、邮箱、Telegram 联系方式",
+        "设置页底部新增版本号显示",
+      ],
+      en: [
+        "Promoted cloud/local mode toggle and glossary to the top control bar, shown alongside live-translate toggle",
+        "App display name changed from MeetSimul to \"会议同传\"",
+        "Added \"Contact Developer\" section in settings with developer info, email, and Telegram",
+        "Added version number display at the bottom of settings page",
+      ],
+    },
+  },
+  {
     version: "v2.0.6",
     date: "2026.03.22",
     changes: {
