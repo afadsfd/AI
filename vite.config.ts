@@ -153,7 +153,7 @@ function vitePluginManusDebugCollector(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
-  base: "/AI/",
+  base: process.env.NODE_ENV === "production" ? "/AI/" : "/",
   plugins,
   resolve: {
     alias: {
