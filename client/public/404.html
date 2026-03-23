@@ -3,16 +3,15 @@
   <head>
     <meta charset="utf-8">
     <script>
-      // Redirect all routes to index.html for SPA support on GitHub Pages
-      var pathSegmentsToKeep = 1; // Keep '/AI' prefix
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      // GitHub Pages SPA redirect: redirect all paths to index.html
+      var base = '/AI/';
+      var url = window.location.pathname;
+      if (url.startsWith(base)) {
+        // Redirect to base with hash-based path for SPA to handle
+        window.location.replace(base + '#' + url.slice(base.length) + window.location.search + window.location.hash);
+      } else {
+        window.location.replace(base);
+      }
     </script>
   </head>
 </html>
