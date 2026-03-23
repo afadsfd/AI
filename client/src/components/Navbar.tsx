@@ -14,7 +14,7 @@ export default function Navbar() {
     { label: t("nav.features"), href: "#features" },
     { label: t("nav.scenarios"), href: "#scenarios" },
     { label: t("nav.contact"), href: "#contact" },
-    { label: t("nav.download"), href: "/MeetSimul.dmg", download: true },
+    { label: t("nav.download"), href: "/MeetSimul_2.2.0.dmg", download: true },
   ];
 
   useEffect(() => {

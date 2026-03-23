@@ -211,7 +211,7 @@ export default function HowItWorksSection() {
             </div>
             <div className="flex flex-col items-center md:items-end gap-3 shrink-0">
               <a
-                href="/MeetSimul.dmg"
+                href="/MeetSimul_2.2.0.dmg"
                 download
                 className="inline-flex items-center gap-3 bg-coral text-white rounded-full px-8 py-3.5 text-sm font-medium font-sans hover:opacity-90 transition-opacity duration-200"
               >
